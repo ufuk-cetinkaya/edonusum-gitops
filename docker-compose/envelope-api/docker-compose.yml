@@ -1,0 +1,15 @@
+
+services:
+  envelope-api:
+    image: ghcr.io/ufuk-cetinkaya/envelope-api:latest
+    container_name: envelope-api
+    networks:
+    - edonusum
+    ports:
+    - 8082:8080
+    env_file:
+    - .env
+
+networks:
+  edonusum:
+    external: true

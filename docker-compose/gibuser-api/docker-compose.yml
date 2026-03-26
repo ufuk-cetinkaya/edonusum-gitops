@@ -1,0 +1,15 @@
+
+services:
+  gibuser-api:
+    image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
+    container_name: gibuser-api
+    networks:
+    - edonusum
+    ports:
+    - 8080:8080
+    env_file:
+    - .env
+
+networks:
+  edonusum:
+    external: true

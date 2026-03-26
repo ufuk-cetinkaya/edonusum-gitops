@@ -1,0 +1,13 @@
+
+services:
+  gibuser-worker:
+    image: ghcr.io/ufuk-cetinkaya/gib-user-worker:latest
+    container_name: gibuser-worker
+    networks:
+    - edonusum
+    env_file:
+    - .env
+
+networks:
+  edonusum:
+    external: true
