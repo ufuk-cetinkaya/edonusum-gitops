@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appname }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appname }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appname }}
+    spec:
+      containers:
+      - name: {{ .Values.appname }}
+        image: {{ .Values.image }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        {{- if or .Values.config.enabled .Values.secret.enabled }}
+        envFrom:
+          {{- if or .Values.secret.enabled }}
+        - secretRef:
+            name: {{ .Values.secret.name }}
+          {{- end}}
+          {{- if or .Values.config.enabled }}
+        - configMapRef:
+            name: {{ .Values.config.name }}
+          {{- end}}
+        {{- end }}

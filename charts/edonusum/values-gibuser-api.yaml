@@ -1,0 +1,14 @@
+appname: gibuser-api
+image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
+replicas: 1
+job:
+  enabled: true
+  name: gibuserdb-migration
+service:
+  enabled: true
+secret:
+  enabled: true
+  name: gibuserdb-secret
+  constr: Server=mssql-server;Database=GibUserDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True
+config:
+  enabled: false

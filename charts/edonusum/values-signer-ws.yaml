@@ -1,0 +1,11 @@
+appname: signer-ws
+image: ghcr.io/ufuk-cetinkaya/signer-ws:latest
+replicas: 1
+job:
+  enabled: false
+service:
+  enabled: true
+secret:
+  enabled: false
+config:
+  enabled: false

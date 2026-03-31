@@ -1,0 +1,14 @@
+appname: document-api
+image: ghcr.io/ufuk-cetinkaya/document-api:latest
+replicas: 1
+job:
+  enabled: true
+  name: ebelgedb-migration
+service:
+  enabled: true
+secret:
+  enabled: true
+  name: ebelgedb-secret
+  constr: Server=mssql-server;Database=EBelgeDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True
+config:
+  enabled: false
