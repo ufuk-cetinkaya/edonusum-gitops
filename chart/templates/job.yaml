@@ -13,6 +13,6 @@ spec:
         args: ["migrate"]
         envFrom:
         - secretRef:
-            name: {{ .Values.secret.name }}
+            name: {{ .Values.appname }}-secret
       restartPolicy: Never
 {{- end}}
