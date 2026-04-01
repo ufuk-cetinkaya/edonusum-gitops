@@ -22,10 +22,10 @@ spec:
         envFrom:
           {{- if or .Values.secret.enabled }}
         - secretRef:
-            name: {{ .Values.secret.name }}
+            name: {{ .Values.appname }}-secret
           {{- end}}
           {{- if or .Values.config.enabled }}
         - configMapRef:
-            name: {{ .Values.config.name }}
+            name: {{ .Values.appname }}-config
           {{- end}}
         {{- end }}
