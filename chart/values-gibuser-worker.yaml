@@ -7,11 +7,9 @@ service:
   enabled: false
 secret:
   enabled: true
-  name: gibuserdb-secret
   constr: Server=mssql-server;Database=GibUserDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True
 config:
   enabled: true
-  name: gibuser-worker-config
 configData:
   AppSettings__GbListUrl: https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserGbListxml.zip
   AppSettings__PkListUrl: https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserPkListxml.zip
