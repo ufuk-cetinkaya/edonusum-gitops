@@ -12,4 +12,4 @@ openssl req -x509 -nodes -days 365 \
 
 kubectl create secret tls api-tls --cert=tls.crt --key=tls.key -n edonusum
 
-kubectl apply -f k8s/ingress.yaml -n edonusum
+kubectl apply -f ../k8s/ingress.yaml -n edonusum
