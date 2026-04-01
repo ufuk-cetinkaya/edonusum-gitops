@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gibuser-worker-config
+data:
+  AppSettings__GbListUrl: "https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserGbListxml.zip"
+  AppSettings__PkListUrl: "https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserPkListxml.zip"

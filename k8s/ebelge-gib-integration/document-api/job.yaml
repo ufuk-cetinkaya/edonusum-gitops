@@ -2,12 +2,11 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: ebelgedb-migration
-  namespace: edonusum
 spec:
   template:
     spec:
       containers:
-      - name: ebelgedb-migration
+      - name: document-api
         image: ghcr.io/ufuk-cetinkaya/document-api:latest
         imagePullPolicy: IfNotPresent
         args: ["migrate"]

@@ -2,12 +2,11 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: gibuserdb-migration
-  namespace: edonusum
 spec:
   template:
     spec:
       containers:
-      - name: gibuserdb-migration
+      - name: gib-user-api
         image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
         imagePullPolicy: IfNotPresent
         args: ["migrate"]

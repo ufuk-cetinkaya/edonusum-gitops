@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: document-api
-  namespace: edonusum
+  name: gibuser-api
 spec:
   selector:
-    app: document-api
+    app: gibuser-api
   ports:
   - port: 80
     targetPort: 8080
