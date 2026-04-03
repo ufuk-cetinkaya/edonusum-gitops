@@ -1,6 +1,7 @@
 appname: signer-ws
 image: ghcr.io/ufuk-cetinkaya/signer-ws:latest
 replicas: 1
+dbname: ebelgedb
 job:
   enabled: false
 service:

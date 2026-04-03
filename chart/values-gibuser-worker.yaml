@@ -1,6 +1,7 @@
 appname: gibuser-worker
 image: ghcr.io/ufuk-cetinkaya/gib-user-worker:latest
 replicas: 0
+dbname: gibuserdb
 job:
   enabled: false
 service:

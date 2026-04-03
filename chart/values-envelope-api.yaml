@@ -1,6 +1,7 @@
 appname: envelope-api
 image: ghcr.io/ufuk-cetinkaya/envelope-api:latest
 replicas: 1
+dbname: ebelgedb
 job:
   enabled: false
 service:

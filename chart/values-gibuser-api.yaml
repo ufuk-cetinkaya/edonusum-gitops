@@ -1,6 +1,7 @@
 appname: gibuser-api
 image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
 replicas: 1
+dbname: ebelgedb
 job:
   enabled: true
 service:

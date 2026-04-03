@@ -1,6 +1,7 @@
 appname: report-worker
 image: ghcr.io/ufuk-cetinkaya/report-worker:latest
 replicas: 1
+dbname: gibuserdb
 job:
   enabled: false
 service:
@@ -12,6 +13,6 @@ config:
   enabled: true
 configData:
   AppSettings__EArsivUrl: https://test.efatura.gov.tr/earsiv/services1/EArsivWsPort
-  AppSettings__SignerUrl: http://signer-ws/signerws
-  AppSettings__DocumentApiUrl: http://document-api/document
+  AppSettings__SignerUrl: http://signer-ws.signer-ws.svc.cluster.local/signerws
+  AppSettings__DocumentApiUrl: https://api.ufukcetinkaya.net/document
   AppSettings__EntegratorVkn: "12345678917"

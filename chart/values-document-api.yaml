@@ -1,6 +1,7 @@
 appname: document-api
 image: ghcr.io/ufuk-cetinkaya/document-api:latest
 replicas: 1
+dbname: ebelgedb
 job:
   enabled: true
 service:

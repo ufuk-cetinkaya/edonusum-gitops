@@ -20,11 +20,11 @@ spec:
         - containerPort: 8080
         {{- if or .Values.config.enabled .Values.secret.enabled }}
         envFrom:
-          {{- if or .Values.secret.enabled }}
+          {{- if .Values.secret.enabled }}
         - secretRef:
             name: {{ .Values.appname }}-secret
           {{- end}}
-          {{- if or .Values.config.enabled }}
+          {{- if .Values.config.enabled }}
         - configMapRef:
             name: {{ .Values.appname }}-config
           {{- end}}

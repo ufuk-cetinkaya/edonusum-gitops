@@ -1,6 +1,7 @@
 appname: envelope-worker
 image: ghcr.io/ufuk-cetinkaya/envelope-worker:latest
 replicas: 1
+dbname: ebelgedb
 job:
   enabled: false
 service:
@@ -12,5 +13,5 @@ config:
   enabled: true
 configData:
   AppSettings__EFaturaUrl: https://merkeztest.gib.gov.tr/EFaturaMerkez/services1/EFatura
-  AppSettings__GibUserUrl: http://gibuser-api
-  AppSettings__SignerUrl: http://signer-ws/signerws
+  AppSettings__GibUserUrl: http://gibuser-api.gibuser-api.svc.cluster.local
+  AppSettings__SignerUrl: http://signer-ws.signer-ws.svc.cluster.local/signerws
