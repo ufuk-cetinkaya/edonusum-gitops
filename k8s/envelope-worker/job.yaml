@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: gibuserdb-migration
+  name: envelope-worker-job
 spec:
   template:
     spec:
       containers:
-      - name: gib-user-api
-        image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
+      - name: envelope-worker
+        image: ghcr.io/ufuk-cetinkaya/envelope-worker:latest
         imagePullPolicy: IfNotPresent
         args: ["migrate"]
         envFrom:
         - secretRef:
-            name: gibuserdb-secret
+            name: envelope-worker-secret
       restartPolicy: Never

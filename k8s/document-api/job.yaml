@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ebelgedb-migration
+spec:
+  template:
+    spec:
+      containers:
+      - name: document-api
+        image: ghcr.io/ufuk-cetinkaya/document-api:latest
+        imagePullPolicy: IfNotPresent
+        args: ["migrate"]
+        envFrom:
+        - secretRef:
+            name: document-api-secret
+      restartPolicy: Never

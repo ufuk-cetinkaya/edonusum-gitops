@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gibuser-worker-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: gibuser-worker
+        image: ghcr.io/ufuk-cetinkaya/gib-user-worker:latest
+        imagePullPolicy: IfNotPresent
+        args: ["migrate"]
+        envFrom:
+        - secretRef:
+            name: gibuser-worker-secret
+      restartPolicy: Never

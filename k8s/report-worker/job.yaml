@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: report-worker-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: report-worker
+        image: ghcr.io/ufuk-cetinkaya/report-worker:latest
+        imagePullPolicy: IfNotPresent
+        args: ["migrate"]
+        envFrom:
+        - secretRef:
+            name: report-worker-secret
+      restartPolicy: Never

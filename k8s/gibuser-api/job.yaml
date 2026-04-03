@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ebelgedb-migration
+  name: gibuser-job
 spec:
   template:
     spec:
       containers:
-      - name: document-api
-        image: ghcr.io/ufuk-cetinkaya/document-api:latest
+      - name: gibuser-api
+        image: ghcr.io/ufuk-cetinkaya/gib-user-api:latest
         imagePullPolicy: IfNotPresent
         args: ["migrate"]
         envFrom:
         - secretRef:
-            name: ebelgedb-secret
+            name: gibuserdb-secret
       restartPolicy: Never
