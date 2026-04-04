@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: gibuser-job
+  name: gibuser-api-job
 spec:
   template:
     spec:
@@ -12,5 +12,5 @@ spec:
         args: ["migrate"]
         envFrom:
         - secretRef:
-            name: gibuserdb-secret
+            name: gibuser-api-secret
       restartPolicy: Never

@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ebelgedb-migration
+  name: document-api-job
 spec:
   template:
     spec:

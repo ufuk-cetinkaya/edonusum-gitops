@@ -2,15 +2,17 @@ appname: gibuser-worker
 image: ghcr.io/ufuk-cetinkaya/gib-user-worker:latest
 replicas: 0
 dbname: gibuserdb
+ingress:
+  enabled: false
 job:
   enabled: false
 service:
   enabled: false
 secret:
   enabled: true
-  constr: Server=mssql-server;Database=GibUserDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True
+  constr: Server=mssql-server.mssql-server.svc.cluster.local,1433;Database=GibUserDb;User Id=sa;Password=StrongPassword123!;TrustServerCertificate=True
 config:
   enabled: true
 configData:
-  AppSettings__GbListUrl: https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserGbListxml.zip
-  AppSettings__PkListUrl: https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserPkListxml.zip
+  AppSettings__GbListUrl: "https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserGbListxml.zip"
+  AppSettings__PkListUrl: "https://merkeztest.gib.gov.tr/EFaturaMerkez/newUserPkListxml.zip"
