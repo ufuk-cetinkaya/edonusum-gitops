@@ -1,0 +1,199 @@
+  # module.edonusum.azurerm_key_vault.main will be created
+  + resource "azurerm_key_vault" "main" {
+      + access_policy                 = (known after apply)
+      + enable_rbac_authorization     = (known after apply)
+      + id                            = (known after apply)
+      + location                      = "westeurope"
+      + name                          = "kv-edonusum-test"
+      + public_network_access_enabled = true
+      + rbac_authorization_enabled    = (known after apply)
+      + resource_group_name           = "rg-edonusum-test"
+      + sku_name                      = "standard"
+      + soft_delete_retention_days    = 90
+      + tenant_id                     = "226eefbc-6526-4679-82cb-27d07f52200c"
+      + vault_uri                     = (known after apply)
+
+      + contact (known after apply)
+
+      + network_acls (known after apply)
+    }
+
+  # module.edonusum.azurerm_key_vault_secret.main will be created
+  + resource "azurerm_key_vault_secret" "main" {
+      + id                      = (known after apply)
+      + key_vault_id            = (known after apply)
+      + name                    = "sqladmin"
+      + resource_id             = (known after apply)
+      + resource_versionless_id = (known after apply)
+      + value                   = (sensitive value)
+      + value_wo                = (write-only attribute)
+      + version                 = (known after apply)
+      + versionless_id          = (known after apply)
+    }
+
+  # module.edonusum.azurerm_kubernetes_cluster.main will be created
+  + resource "azurerm_kubernetes_cluster" "main" {
+      + ai_toolchain_operator_enabled       = false
+      + current_kubernetes_version          = (known after apply)
+      + dns_prefix                          = "edonusumtest"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = (known after apply)
+      + location                            = "westeurope"
+      + name                                = "aks-edonusum-test"
+      + node_os_upgrade_channel             = "NodeImage"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_enabled                 = true
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + resource_group_name                 = "rg-edonusum-test"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + workload_identity_enabled           = true
+
+      + auto_scaler_profile (known after apply)
+
+      + bootstrap_profile (known after apply)
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 1
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = (known after apply)
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "standard_b2s_v2"
+          + workload_runtime     = (known after apply)
+
+          + upgrade_settings {
+              + drain_timeout_in_minutes      = 0
+              + max_surge                     = "10%"
+              + node_soak_duration_in_minutes = 0
+            }
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+
+      + key_vault_secrets_provider {
+          + secret_identity          = (known after apply)
+          + secret_rotation_enabled  = false
+          + secret_rotation_interval = "2m"
+        }
+
+      + kubelet_identity (known after apply)
+
+      + network_profile (known after apply)
+
+      + node_provisioning_profile (known after apply)
+
+      + windows_profile (known after apply)
+    }
+
+  # module.edonusum.azurerm_mssql_database.main will be created
+  + resource "azurerm_mssql_database" "main" {
+      + auto_pause_delay_in_minutes                                = (known after apply)
+      + collation                                                  = (known after apply)
+      + create_mode                                                = "Default"
+      + creation_source_database_id                                = (known after apply)
+      + enclave_type                                               = (known after apply)
+      + geo_backup_enabled                                         = true
+      + id                                                         = (known after apply)
+      + ledger_enabled                                             = (known after apply)
+      + license_type                                               = (known after apply)
+      + maintenance_configuration_name                             = (known after apply)
+      + max_size_gb                                                = (known after apply)
+      + min_capacity                                               = (known after apply)
+      + name                                                       = "sqldb-edonusum-test"
+      + read_replica_count                                         = (known after apply)
+      + read_scale                                                 = (known after apply)
+      + restore_point_in_time                                      = (known after apply)
+      + sample_name                                                = (known after apply)
+      + secondary_type                                             = (known after apply)
+      + server_id                                                  = (known after apply)
+      + sku_name                                                   = "Basic"
+      + storage_account_type                                       = "Local"
+      + transparent_data_encryption_enabled                        = true
+      + transparent_data_encryption_key_automatic_rotation_enabled = false
+      + zone_redundant                                             = (known after apply)
+
+      + long_term_retention_policy (known after apply)
+
+      + short_term_retention_policy (known after apply)
+
+      + threat_detection_policy (known after apply)
+    }
+
+  # module.edonusum.azurerm_mssql_firewall_rule.main will be created
+  + resource "azurerm_mssql_firewall_rule" "main" {
+      + end_ip_address   = "0.0.0.0"
+      + id               = (known after apply)
+      + name             = "allow-azure"
+      + server_id        = (known after apply)
+      + start_ip_address = "0.0.0.0"
+    }
+
+  # module.edonusum.azurerm_mssql_server.main will be created
+  + resource "azurerm_mssql_server" "main" {
+      + administrator_login                      = "sqladmin"
+      + administrator_login_password             = (sensitive value)
+      + administrator_login_password_wo          = (write-only attribute)
+      + connection_policy                        = "Default"
+      + express_vulnerability_assessment_enabled = false
+      + fully_qualified_domain_name              = (known after apply)
+      + id                                       = (known after apply)
+      + location                                 = "westeurope"
+      + minimum_tls_version                      = "1.2"
+      + name                                     = "sql-edonusum-test"
+      + outbound_network_restriction_enabled     = false
+      + primary_user_assigned_identity_id        = (known after apply)
+      + public_network_access_enabled            = true
+      + resource_group_name                      = "rg-edonusum-test"
+      + restorable_dropped_database_ids          = (known after apply)
+      + version                                  = "12.0"
+    }
+
+  # module.edonusum.azurerm_resource_group.main will be created
+  + resource "azurerm_resource_group" "main" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "rg-edonusum-test"
+    }
+
+  # module.edonusum.random_password.main will be created
+  + resource "random_password" "main" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = true
+      + upper       = true
+    }
