@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: gibuser-worker-job
+  name: gibuserdb-migration
 spec:
   template:
     spec:

@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: report-worker-job
+  name: ebelgedb-migration
 spec:
   template:
     spec:
