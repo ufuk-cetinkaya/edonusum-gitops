@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: userdb-migration
+spec:
+  template:
+    spec:
+      containers:
+      - name: auth-api
+        image: ghcr.io/ufuk-cetinkaya/auth-api:latest
+        imagePullPolicy: IfNotPresent
+        args: ["migrate"]
+        envFrom:
+        - secretRef:
+            name: auth-api-secret
+      restartPolicy: Never
