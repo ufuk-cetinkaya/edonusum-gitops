@@ -1,0 +1,15 @@
+
+services:
+  auth-api:
+    image: ghcr.io/ufuk-cetinkaya/auth-api:latest
+    container_name: auth-api
+    networks:
+    - edonusum
+    ports:
+    - 8084:8080
+    env_file:
+    - .env
+
+networks:
+  edonusum:
+    external: true    
