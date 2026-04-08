@@ -4,8 +4,6 @@ namespace: document-api
 resources:
 - namespace.yaml
 - secret.yaml
-- secret-tls.yaml
 - job.yaml
 - deployment.yaml
 - service.yaml
-- ingress.yaml
