@@ -1,0 +1,13 @@
+
+services:
+  api-gateway:
+    image: ghcr.io/ufuk-cetinkaya/api-gateway:latest
+    container_name: api-gateway
+    networks:
+    - edonusum
+    ports:
+    - 8085:8080
+
+networks:
+  edonusum:
+    external: true    
